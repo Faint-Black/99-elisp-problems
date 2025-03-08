@@ -1,0 +1,71 @@
+* 99 Lisp problems
+https://www.ic.unicamp.br/~meidanis/courses/mc336/problemas-lisp/L-99_Ninety-Nine_Lisp_Problems.html
+
+Focus on recursion and try to only use the most basic builtin functions to solve the given problems. As the problems become more complex you can allow yourself to use more builtins.
+
+** Problem 01 - Find the last element of a list.
+*Example:* (fn '(A B C D)) -> D
+#+BEGIN_SRC emacs-lisp :results raw
+  (defun my-last(LIST)
+    "Returns the last element of a list"
+    (if (cdr LIST) (my-last (cdr LIST)) (car LIST)))
+
+  (my-last '(A B C D))
+#+END_SRC
+
+#+RESULTS:
+D
+
+** Problem 02 - Find the last, but one, elements of a list.
+*Example:* (fn '(A B C D)) -> (C D)
+#+BEGIN_SRC emacs-lisp :results raw
+  (defun my-last-but-one(LIST)
+    "Returns the last but one elements of a list"
+    (if (>= (length (cdr LIST)) 2) (my-last-but-one (cdr LIST)) LIST))
+
+  (my-last-but-one '(A B C D))
+#+END_SRC
+
+#+RESULTS:
+(C D)
+
+** Problem 03 - Find the K'th element of a list. (1 based index)
+*Example:* (fn '(A B C D) 3) -> C
+#+BEGIN_SRC emacs-lisp :results raw
+  (defun my-nth-element(LIST N)
+    "Returns the nth element of a list"
+    (if (<= N 1) (car LIST) (my-nth-element (cdr LIST) (- N 1))))
+
+  (my-nth-element '(A B C D) 3))
+#+END_SRC
+
+#+RESULTS:
+C
+
+** Problem 04 - Find the numbers of elements on a list.
+*Example:* (fn '(A B C D)) -> 4
+#+BEGIN_SRC emacs-lisp :results raw
+  (defun my-num-of-elements(LIST)
+    "Returns the number of elements on a list"
+    (if (cdr LIST) (+ (my-num-of-elements (cdr LIST)) 1) 1))
+
+  (my-num-of-elements '(A B C D))
+#+END_SRC
+
+#+RESULTS:
+4
+
+** Problem 05 - Reverse a list.
+*Example:* (fn '(A B C D)) -> (D C B A)
+#+BEGIN_SRC emacs-lisp :results raw
+  (defun my-reverse-list(LIST)
+    "Reverses a list"
+    (if (cdr LIST) (append (last LIST) (my-reverse-list (butlast LIST))) LIST))
+
+  (my-reverse-list '(A B C D))
+#+END_SRC
+
+#+RESULTS:
+(D C B A)
+
+
