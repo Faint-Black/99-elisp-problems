@@ -5,6 +5,7 @@ Focus on recursion and try to only use the most basic builtin functions to solve
 
 ** Problem 01 - Find the last box of a list.
 *Example:* (fn '(A B C D)) -> (D)
+#+NAME: problem-01
 #+BEGIN_SRC emacs-lisp :results raw
   (defun my-last(LIST)
     "Returns the last box of a list"
@@ -13,11 +14,12 @@ Focus on recursion and try to only use the most basic builtin functions to solve
   (my-last '(A B C D))
 #+END_SRC
 
-#+RESULTS:
+#+RESULTS: problem-01
 (D)
 
 ** Problem 02 - Find the last, but one, box of a list.
 *Example:* (fn '(A B C D)) -> (C D)
+#+NAME: problem-02
 #+BEGIN_SRC emacs-lisp :results raw
   (defun my-last-but-one(LIST)
     "Returns the last but one box of a list"
@@ -26,11 +28,12 @@ Focus on recursion and try to only use the most basic builtin functions to solve
   (my-last-but-one '(A B C D))
 #+END_SRC
 
-#+RESULTS:
+#+RESULTS: problem-02
 (C D)
 
 ** Problem 03 - Find the K'th element of a list. (1 based index)
 *Example:* (fn '(A B C D) 3) -> C
+#+NAME: problem-03
 #+BEGIN_SRC emacs-lisp :results raw
   (defun my-nth-element(LIST N)
     "Returns the nth element of a list"
@@ -39,11 +42,12 @@ Focus on recursion and try to only use the most basic builtin functions to solve
   (my-nth-element '(A B C D) 3))
 #+END_SRC
 
-#+RESULTS:
+#+RESULTS: problem-03
 C
 
 ** Problem 04 - Find the numbers of elements on a list.
 *Example:* (fn '(A B C D)) -> 4
+#+NAME: problem-04
 #+BEGIN_SRC emacs-lisp :results raw
   (defun my-num-of-elements(LIST)
     "Returns the number of elements on a list"
@@ -52,11 +56,12 @@ C
   (my-num-of-elements '(A B C D))
 #+END_SRC
 
-#+RESULTS:
+#+RESULTS: problem-04
 4
 
 ** Problem 05 - Reverse a list.
 *Example:* (fn '(A B C D)) -> (D C B A)
+#+NAME: problem-05
 #+BEGIN_SRC emacs-lisp :results raw
   (defun my-reverse-list(LIST)
     "Reverses a list"
@@ -65,7 +70,5 @@ C
   (my-reverse-list '(A B C D))
 #+END_SRC
 
-#+RESULTS:
+#+RESULTS: problem-05
 (D C B A)
-
-
