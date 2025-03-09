@@ -6,16 +6,18 @@ Focus on recursion and try to only use the most basic builtin functions to solve
 ** Problem 01 - Find the last box of a list.
 *Example:* (fn '(A B C D)) -> (D)
 #+NAME: problem-01
-#+BEGIN_SRC emacs-lisp :results raw
+#+BEGIN_SRC emacs-lisp :results raw :var list="(A B C D)"
   (defun my-last(LIST)
     "Returns the last box of a list"
     (if (cdr (cdr LIST)) (my-last (cdr LIST)) (cdr LIST)))
 
-  (my-last '(A B C D))
+  (my-last list)
 #+END_SRC
 
-#+RESULTS: problem-01
-(D)
+#+CALL: problem-01(list='(a b c d))
+
+#+RESULTS:
+(d)
 
 ** Problem 02 - Find the last, but one, box of a list.
 *Example:* (fn '(A B C D)) -> (C D)
