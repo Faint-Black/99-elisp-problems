@@ -1,3 +1,8 @@
+#+TITLE: 99 Lisp Problems
+#+AUTHOR: Cezar
+#+LANGUAGE: en
+#+OPTIONS: toc:2
+
 * 99 Lisp problems
 https://www.ic.unicamp.br/~meidanis/courses/mc336/problemas-lisp/L-99_Ninety-Nine_Lisp_Problems.html
 
@@ -13,19 +18,19 @@ Focus on recursion and try to only use the most basic builtin functions to solve
 
   ;; Test evaluations
   (format "%s\n%s\n%s\n%s\n%s\n%s\n"
+          (my-last '(A B C D))
           (my-last '(A))
           (my-last '(A B))
           (my-last '(A B C))
-          (my-last '(A B C D))
           (my-last '(A B (C D)))
           (my-last '(A B (C (D E)) F)))
 #+END_SRC
 
 #+RESULTS: problem-01
+(D)
 (A)
 (B)
 (C)
-(D)
 ((C D))
 (F)
 
@@ -37,11 +42,23 @@ Focus on recursion and try to only use the most basic builtin functions to solve
     "Returns the last but one box of a list"
     (if (>= (length (cdr LIST)) 2) (my-last-but-one (cdr LIST)) LIST))
 
-  (my-last-but-one '(A B C D))
+  ;; Test evaluations
+  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
+          (my-last-but-one '(A B C D))
+          (my-last-but-one '(A))
+          (my-last-but-one '(A B))
+          (my-last-but-one '(A B C))
+          (my-last-but-one '(A B (C D)))
+          (my-last-but-one '(A B (C (D E)) F)))
 #+END_SRC
 
 #+RESULTS: problem-02
 (C D)
+(A)
+(A B)
+(B C)
+(B (C D))
+((C (D E)) F)
 
 ** Problem 03 - Find the K'th element of a list. (1 based index)
 *Example:* (fn '(A B C D) 3) -> C
@@ -51,11 +68,23 @@ Focus on recursion and try to only use the most basic builtin functions to solve
     "Returns the nth element of a list"
     (if (<= N 1) (car LIST) (my-nth-element (cdr LIST) (- N 1))))
 
-  (my-nth-element '(A B C D) 3))
+  ;; Test evaluations
+  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
+          (my-nth-element '(A B C D) 3)
+          (my-nth-element '(A) 1)
+          (my-nth-element '(A B) 1)
+          (my-nth-element '(A B C) 2)
+          (my-nth-element '(A B (C D)) 3)
+          (my-nth-element '(A B (C (D E)) F) 3))
 #+END_SRC
 
 #+RESULTS: problem-03
 C
+A
+A
+B
+(C D)
+(C (D E))
 
 ** Problem 04 - Find the numbers of elements on a list.
 *Example:* (fn '(A B C D)) -> 4
@@ -65,10 +94,22 @@ C
     "Returns the number of elements on a list"
     (if (cdr LIST) (+ (my-num-of-elements (cdr LIST)) 1) 1))
 
-  (my-num-of-elements '(A B C D))
+  ;; Test evaluations
+  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
+          (my-num-of-elements '(A B C D))
+          (my-num-of-elements '(A))
+          (my-num-of-elements '(A B))
+          (my-num-of-elements '(A B C))
+          (my-num-of-elements '(A B (C D)))
+          (my-num-of-elements '(A B (C (D E)) F)))
 #+END_SRC
 
 #+RESULTS: problem-04
+4
+1
+2
+3
+3
 4
 
 ** Problem 05 - Reverse a list.
@@ -79,8 +120,20 @@ C
     "Reverses a list"
     (if (cdr LIST) (append (last LIST) (my-reverse-list (butlast LIST))) LIST))
 
-  (my-reverse-list '(A B C D))
+  ;; Test evaluations
+  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
+          (my-reverse-list '(A B C D))
+          (my-reverse-list '(A))
+          (my-reverse-list '(A B))
+          (my-reverse-list '(A B C))
+          (my-reverse-list '(A B (C D)))
+          (my-reverse-list '(A B (C (D E)) F)))
 #+END_SRC
 
 #+RESULTS: problem-05
 (D C B A)
+(A)
+(B A)
+(C B A)
+((C D) B A)
+(F (C (D E)) B A)
