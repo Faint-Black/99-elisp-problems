@@ -240,8 +240,8 @@ href="https://www.ic.unicamp.br/~meidanis/courses/mc336/problemas-lisp/L-99_Nine
 <p>Focus on recursion and try to only use the most basic builtin
 functions to solve the given problems. As the problems become more
 complex you can allow yourself to use more builtins.</p>
-<h2 id="problem-01---find-the-last-box-of-a-list.">Problem 01 - Find the
-last box of a list.</h2>
+<h2 id="problem-01---find-the-last-box-of-a-list">Problem 01 - Find the
+last box of a list</h2>
 <p><strong>Example:</strong> (fn '(A B C D)) -&gt; (D)</p>
 <div class="sourceCode" id="problem-01" data-org-language="emacs-lisp"
 data-results="raw"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="problem-01-1"><a href="#problem-01-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-last</span>(LIST)</span>
@@ -257,8 +257,8 @@ data-results="raw"><pre class="sourceCode commonlisp"><code class="sourceCode co
 <span id="problem-01-11"><a href="#problem-01-11" aria-hidden="true" tabindex="-1"></a>        (my-last &#39;(A B (C D)))</span>
 <span id="problem-01-12"><a href="#problem-01-12" aria-hidden="true" tabindex="-1"></a>        (my-last &#39;(A B (C (D E)) F)))</span></code></pre></div>
 <p>(D) (A) (B) (C) ((C D)) (F)</p>
-<h2 id="problem-02---find-the-last-but-one-box-of-a-list.">Problem 02 -
-Find the last, but one, box of a list.</h2>
+<h2 id="problem-02---find-the-last-but-one-box-of-a-list">Problem 02 -
+Find the last, but one, box of a list</h2>
 <p><strong>Example:</strong> (fn '(A B C D)) -&gt; (C D)</p>
 <div class="sourceCode" id="problem-02" data-org-language="emacs-lisp"
 data-results="raw"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="problem-02-1"><a href="#problem-02-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-last-but-one</span>(LIST)</span>
@@ -275,8 +275,8 @@ data-results="raw"><pre class="sourceCode commonlisp"><code class="sourceCode co
 <span id="problem-02-12"><a href="#problem-02-12" aria-hidden="true" tabindex="-1"></a>        (my-last-but-one &#39;(A B (C (D E)) F)))</span></code></pre></div>
 <p>(C D) (A) (A B) (B C) (B (C D)) ((C (D E)) F)</p>
 <h2
-id="problem-03---find-the-kth-element-of-a-list.-1-based-index">Problem
-03 - Find the K'th element of a list. (1 based index)</h2>
+id="problem-03---find-the-kth-element-of-a-list-1-based-index">Problem
+03 - Find the K'th element of a list (1 based index)</h2>
 <p><strong>Example:</strong> (fn '(A B C D) 3) -&gt; C</p>
 <div class="sourceCode" id="problem-03" data-org-language="emacs-lisp"
 data-results="raw"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="problem-03-1"><a href="#problem-03-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-nth-element</span>(LIST N)</span>
@@ -292,8 +292,8 @@ data-results="raw"><pre class="sourceCode commonlisp"><code class="sourceCode co
 <span id="problem-03-11"><a href="#problem-03-11" aria-hidden="true" tabindex="-1"></a>        (my-nth-element &#39;(A B (C D)) <span class="dv">3</span>)</span>
 <span id="problem-03-12"><a href="#problem-03-12" aria-hidden="true" tabindex="-1"></a>        (my-nth-element &#39;(A B (C (D E)) F) <span class="dv">3</span>))</span></code></pre></div>
 <p>C A A B (C D) (C (D E))</p>
-<h2 id="problem-04---find-the-numbers-of-elements-on-a-list.">Problem 04
-- Find the numbers of elements on a list.</h2>
+<h2 id="problem-04---find-the-numbers-of-elements-on-a-list">Problem 04
+- Find the numbers of elements on a list</h2>
 <p><strong>Example:</strong> (fn '(A B C D)) -&gt; 4</p>
 <div class="sourceCode" id="problem-04" data-org-language="emacs-lisp"
 data-results="raw"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="problem-04-1"><a href="#problem-04-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-num-of-elements</span>(LIST)</span>
@@ -309,7 +309,7 @@ data-results="raw"><pre class="sourceCode commonlisp"><code class="sourceCode co
 <span id="problem-04-11"><a href="#problem-04-11" aria-hidden="true" tabindex="-1"></a>        (my-num-of-elements &#39;(A B (C D)))</span>
 <span id="problem-04-12"><a href="#problem-04-12" aria-hidden="true" tabindex="-1"></a>        (my-num-of-elements &#39;(A B (C (D E)) F)))</span></code></pre></div>
 <p>4 1 2 3 3 4</p>
-<h2 id="problem-05---reverse-a-list.">Problem 05 - Reverse a list.</h2>
+<h2 id="problem-05---reverse-a-list">Problem 05 - Reverse a list</h2>
 <p><strong>Example:</strong> (fn '(A B C D)) -&gt; (D C B A)</p>
 <div class="sourceCode" id="problem-05" data-org-language="emacs-lisp"
 data-results="raw"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="problem-05-1"><a href="#problem-05-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-reverse-list</span>(LIST)</span>

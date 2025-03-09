@@ -6,15 +6,15 @@ title: 99 Lisp Problems and Solutions
 
 -   [99 Lisp problems](#lisp-problems){#toc-lisp-problems}
     -   [Problem 01 - Find the last box of a
-        list.](#problem-01---find-the-last-box-of-a-list.){#toc-problem-01---find-the-last-box-of-a-list.}
+        list](#problem-01---find-the-last-box-of-a-list){#toc-problem-01---find-the-last-box-of-a-list}
     -   [Problem 02 - Find the last, but one, box of a
-        list.](#problem-02---find-the-last-but-one-box-of-a-list.){#toc-problem-02---find-the-last-but-one-box-of-a-list.}
-    -   [Problem 03 - Find the K\'th element of a list. (1 based
-        index)](#problem-03---find-the-kth-element-of-a-list.-1-based-index){#toc-problem-03---find-the-kth-element-of-a-list.-1-based-index}
+        list](#problem-02---find-the-last-but-one-box-of-a-list){#toc-problem-02---find-the-last-but-one-box-of-a-list}
+    -   [Problem 03 - Find the K\'th element of a list (1 based
+        index)](#problem-03---find-the-kth-element-of-a-list-1-based-index){#toc-problem-03---find-the-kth-element-of-a-list-1-based-index}
     -   [Problem 04 - Find the numbers of elements on a
-        list.](#problem-04---find-the-numbers-of-elements-on-a-list.){#toc-problem-04---find-the-numbers-of-elements-on-a-list.}
+        list](#problem-04---find-the-numbers-of-elements-on-a-list){#toc-problem-04---find-the-numbers-of-elements-on-a-list}
     -   [Problem 05 - Reverse a
-        list.](#problem-05---reverse-a-list.){#toc-problem-05---reverse-a-list.}
+        list](#problem-05---reverse-a-list){#toc-problem-05---reverse-a-list}
 
 # 99 Lisp problems
 
@@ -24,7 +24,7 @@ Focus on recursion and try to only use the most basic builtin functions
 to solve the given problems. As the problems become more complex you can
 allow yourself to use more builtins.
 
-## Problem 01 - Find the last box of a list.
+## Problem 01 - Find the last box of a list
 
 **Example:** (fn \'(A B C D)) -\> (D)
 
@@ -48,7 +48,7 @@ allow yourself to use more builtins.
 ```
 \(D\) (A) (B) (C) ((C D)) (F)
 
-## Problem 02 - Find the last, but one, box of a list.
+## Problem 02 - Find the last, but one, box of a list
 
 **Example:** (fn \'(A B C D)) -\> (C D)
 
@@ -72,7 +72,7 @@ allow yourself to use more builtins.
 ```
 (C D) (A) (A B) (B C) (B (C D)) ((C (D E)) F)
 
-## Problem 03 - Find the K\'th element of a list. (1 based index)
+## Problem 03 - Find the K\'th element of a list (1 based index)
 
 **Example:** (fn \'(A B C D) 3) -\> C
 
@@ -96,7 +96,7 @@ allow yourself to use more builtins.
 ```
 C A A B (C D) (C (D E))
 
-## Problem 04 - Find the numbers of elements on a list.
+## Problem 04 - Find the numbers of elements on a list
 
 **Example:** (fn \'(A B C D)) -\> 4
 
@@ -120,7 +120,7 @@ C A A B (C D) (C (D E))
 ```
 4 1 2 3 3 4
 
-## Problem 05 - Reverse a list.
+## Problem 05 - Reverse a list
 
 **Example:** (fn \'(A B C D)) -\> (D C B A)
 
