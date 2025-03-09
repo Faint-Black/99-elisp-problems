@@ -1,9 +1,22 @@
+* Table of contents
+** Working with lists
+[[#p01][01 - Find the last box of a list]]
+[[#p02][02 - Find the last, but one, box of a list]]
+[[#p03][03 - Find the k'th element of a list]]
+[[#p04][04 - Find the number of elements on a list]]
+[[#p05][05 - Reverse a list]]
+
+-----
+
 * 99 Lisp problems
 https://www.ic.unicamp.br/~meidanis/courses/mc336/problemas-lisp/L-99_Ninety-Nine_Lisp_Problems.html
 
 Focus on recursion and try to only use the most basic builtin functions to solve the given problems. As the problems become more complex you can allow yourself to use more builtins.
 
 ** Problem 01 - Find the last box of a list
+:PROPERTIES:
+:CUSTOM_ID: p01
+:END:
 *Example:* (fn '(A B C D)) -> (D)
 #+NAME: problem-01
 #+BEGIN_SRC emacs-lisp :results raw
@@ -30,6 +43,9 @@ Focus on recursion and try to only use the most basic builtin functions to solve
 (F)
 
 ** Problem 02 - Find the last, but one, box of a list
+:PROPERTIES:
+:CUSTOM_ID: p02
+:END:
 *Example:* (fn '(A B C D)) -> (C D)
 #+NAME: problem-02
 #+BEGIN_SRC emacs-lisp :results raw
@@ -56,6 +72,9 @@ Focus on recursion and try to only use the most basic builtin functions to solve
 ((C (D E)) F)
 
 ** Problem 03 - Find the K'th element of a list (1 based index)
+:PROPERTIES:
+:CUSTOM_ID: p03
+:END:
 *Example:* (fn '(A B C D) 3) -> C
 #+NAME: problem-03
 #+BEGIN_SRC emacs-lisp :results raw
@@ -82,6 +101,9 @@ B
 (C (D E))
 
 ** Problem 04 - Find the numbers of elements on a list
+:PROPERTIES:
+:CUSTOM_ID: p04
+:END:
 *Example:* (fn '(A B C D)) -> 4
 #+NAME: problem-04
 #+BEGIN_SRC emacs-lisp :results raw
@@ -108,6 +130,9 @@ B
 4
 
 ** Problem 05 - Reverse a list
+:PROPERTIES:
+:CUSTOM_ID: p05
+:END:
 *Example:* (fn '(A B C D)) -> (D C B A)
 #+NAME: problem-05
 #+BEGIN_SRC emacs-lisp :results raw
