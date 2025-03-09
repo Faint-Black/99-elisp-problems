@@ -156,3 +156,28 @@ Reverse a list.
 (C B A)
 ((C D) B A)
 (F (C (D E)) B A)
+
+-----
+
+* Table of Contents
+- [[id:abcd-1234][Introduction]]
+- [[id:wxyz-5678][Setup Guide]]
+- [[id:lmno-9012][Conclusion]]
+
+* Introduction
+  :PROPERTIES:
+  :ID: abcd-1234
+  :END:
+Some intro text.
+
+* Setup Guide
+  :PROPERTIES:
+  :ID: wxyz-5678
+  :END:
+Setup details.
+
+* Conclusion
+  :PROPERTIES:
+  :ID: lmno-9012
+  :END:
+  Final thoughts.
