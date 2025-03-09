@@ -1,10 +1,10 @@
 * Table of contents
-** Working with lists
-- [[#problem-01][01 - Find the last box of a list]]
-- [[#problem-02][02 - Find the last, but one, box of a list]]
-- [[#problem-03][03 - Find the k'th element of a list]]
-- [[#problem-04][04 - Find the number of elements on a list]]
-- [[#problem-05][05 - Reverse a list]]
+- Working with lists
+  - [[#problem-01][01 - Find the last box of a list]]
+  - [[#problem-02][02 - Find the last, but one, box of a list]]
+  - [[#problem-03][03 - Find the k'th element of a list]]
+  - [[#problem-04][04 - Find the number of elements on a list]]
+  - [[#problem-05][05 - Reverse a list]]
 
 -----
 
