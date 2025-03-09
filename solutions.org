@@ -1,7 +1,9 @@
-#+TITLE: 99 Lisp Problems
+#+TITLE: 99 Lisp Problems and Solutions
 #+AUTHOR: Cezar
 #+LANGUAGE: en
-#+OPTIONS: toc:2
+#+OPTIONS: toc:3
+
+#+TOC: headlines 3
 
 * 99 Lisp problems
 https://www.ic.unicamp.br/~meidanis/courses/mc336/problemas-lisp/L-99_Ninety-Nine_Lisp_Problems.html
