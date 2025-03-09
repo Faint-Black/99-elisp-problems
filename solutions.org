@@ -1,14 +1,10 @@
 * Table of contents
 ** Working with lists
-[[*Problem 01][01 - Find the last box of a list]]
-
-[[*Problem 02][02 - Find the last, but one, box of a list]]
-
-[[*Problem 03][03 - Find the k'th element of a list]]
-
-[[*Problem 04][04 - Find the number of elements on a list]]
-
-[[*Problem 05][05 - Reverse a list]]
+- [[#problem-01][01 - Find the last box of a list]]
+- [[#Problem-02][02 - Find the last, but one, box of a list]]
+- [[*Problem-03][03 - Find the k'th element of a list]]
+- [[*Problem-04][04 - Find the number of elements on a list]]
+- [[*Problem-05][05 - Reverse a list]]
 
 -----
 
@@ -17,7 +13,7 @@ https://www.ic.unicamp.br/~meidanis/courses/mc336/problemas-lisp/L-99_Ninety-Nin
 
 Focus on recursion and try to only use the most basic builtin functions to solve the given problems. As the problems become more complex you can allow yourself to use more builtins.
 
-** Problem 01
+** Problem-01
 Find the last box of a list.
 
 *Example:* (fn '(A B C D)) -> (D)
@@ -45,7 +41,7 @@ Find the last box of a list.
 ((C D))
 (F)
 
-** Problem 02
+** Problem-02
 Find the last, but one, box of a list.
 
 *Example:* (fn '(A B C D)) -> (C D)
@@ -73,7 +69,7 @@ Find the last, but one, box of a list.
 (B (C D))
 ((C (D E)) F)
 
-** Problem 03
+** Problem-03
 Find the K'th element of a list (1 based index).
 
 *Example:* (fn '(A B C D) 3) -> C
@@ -101,7 +97,7 @@ B
 (C D)
 (C (D E))
 
-** Problem 04
+** Problem-04
 Find the numbers of elements on a list.
 
 *Example:* (fn '(A B C D)) -> 4
@@ -129,7 +125,7 @@ Find the numbers of elements on a list.
 3
 4
 
-** Problem 05
+** Problem-05
 Reverse a list.
 
 *Example:* (fn '(A B C D)) -> (D C B A)
@@ -156,28 +152,3 @@ Reverse a list.
 (C B A)
 ((C D) B A)
 (F (C (D E)) B A)
-
------
-
-* Table of Contents
-- [[id:abcd-1234][Introduction]]
-- [[id:wxyz-5678][Setup Guide]]
-- [[id:lmno-9012][Conclusion]]
-
-* Introduction
-  :PROPERTIES:
-  :ID: abcd-1234
-  :END:
-Some intro text.
-
-* Setup Guide
-  :PROPERTIES:
-  :ID: wxyz-5678
-  :END:
-Setup details.
-
-* Conclusion
-  :PROPERTIES:
-  :ID: lmno-9012
-  :END:
-  Final thoughts.
