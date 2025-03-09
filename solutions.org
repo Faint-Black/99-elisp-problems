@@ -8,7 +8,7 @@ https://www.ic.unicamp.br/~meidanis/courses/mc336/problemas-lisp/L-99_Ninety-Nin
 
 Focus on recursion and try to only use the most basic builtin functions to solve the given problems. As the problems become more complex you can allow yourself to use more builtins.
 
-** Problem 01 - Find the last box of a list.
+** Problem 01 - Find the last box of a list
 *Example:* (fn '(A B C D)) -> (D)
 #+NAME: problem-01
 #+BEGIN_SRC emacs-lisp :results raw
@@ -34,7 +34,7 @@ Focus on recursion and try to only use the most basic builtin functions to solve
 ((C D))
 (F)
 
-** Problem 02 - Find the last, but one, box of a list.
+** Problem 02 - Find the last, but one, box of a list
 *Example:* (fn '(A B C D)) -> (C D)
 #+NAME: problem-02
 #+BEGIN_SRC emacs-lisp :results raw
@@ -60,7 +60,7 @@ Focus on recursion and try to only use the most basic builtin functions to solve
 (B (C D))
 ((C (D E)) F)
 
-** Problem 03 - Find the K'th element of a list. (1 based index)
+** Problem 03 - Find the K'th element of a list (1 based index)
 *Example:* (fn '(A B C D) 3) -> C
 #+NAME: problem-03
 #+BEGIN_SRC emacs-lisp :results raw
@@ -86,7 +86,7 @@ B
 (C D)
 (C (D E))
 
-** Problem 04 - Find the numbers of elements on a list.
+** Problem 04 - Find the numbers of elements on a list
 *Example:* (fn '(A B C D)) -> 4
 #+NAME: problem-04
 #+BEGIN_SRC emacs-lisp :results raw
@@ -112,7 +112,7 @@ B
 3
 4
 
-** Problem 05 - Reverse a list.
+** Problem 05 - Reverse a list
 *Example:* (fn '(A B C D)) -> (D C B A)
 #+NAME: problem-05
 #+BEGIN_SRC emacs-lisp :results raw
