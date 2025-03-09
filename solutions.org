@@ -3,24 +3,24 @@ https://www.ic.unicamp.br/~meidanis/courses/mc336/problemas-lisp/L-99_Ninety-Nin
 
 Focus on recursion and try to only use the most basic builtin functions to solve the given problems. As the problems become more complex you can allow yourself to use more builtins.
 
-** Problem 01 - Find the last element of a list.
-*Example:* (fn '(A B C D)) -> D
+** Problem 01 - Find the last box of a list.
+*Example:* (fn '(A B C D)) -> (D)
 #+BEGIN_SRC emacs-lisp :results raw
   (defun my-last(LIST)
-    "Returns the last element of a list"
-    (if (cdr LIST) (my-last (cdr LIST)) (car LIST)))
+    "Returns the last box of a list"
+    (if (cdr (cdr LIST)) (my-last (cdr LIST)) (cdr LIST)))
 
   (my-last '(A B C D))
 #+END_SRC
 
 #+RESULTS:
-D
+(D)
 
-** Problem 02 - Find the last, but one, elements of a list.
+** Problem 02 - Find the last, but one, box of a list.
 *Example:* (fn '(A B C D)) -> (C D)
 #+BEGIN_SRC emacs-lisp :results raw
   (defun my-last-but-one(LIST)
-    "Returns the last but one elements of a list"
+    "Returns the last but one box of a list"
     (if (>= (length (cdr LIST)) 2) (my-last-but-one (cdr LIST)) LIST))
 
   (my-last-but-one '(A B C D))
