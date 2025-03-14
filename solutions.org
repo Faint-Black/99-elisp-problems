@@ -24,18 +24,18 @@ Find the last box of a list.
 *Example:* (fn '(A B C D)) -> (D)
 #+NAME: problem-01
 #+BEGIN_SRC emacs-lisp :results raw
-  (defun my-last(LIST)
-    "Returns the last box of a list"
-    (if (cdr LIST) (if (cdr (cdr LIST)) (my-last (cdr LIST)) (cdr LIST)) LIST))
+(defun my-last(LIST)
+  "Returns the last box of a list"
+  (if (cdr LIST) (if (cdr (cdr LIST)) (my-last (cdr LIST)) (cdr LIST)) LIST))
 
-  ;; Test evaluations
-  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
-          (my-last '(A B C D))
-          (my-last '(A))
-          (my-last '(A B))
-          (my-last '(A B C))
-          (my-last '(A B (C D)))
-          (my-last '(A B (C (D E)) F)))
+;; Test evaluations
+(format "%s\n%s\n%s\n%s\n%s\n%s\n"
+        (my-last '(A B C D))
+        (my-last '(A))
+        (my-last '(A B))
+        (my-last '(A B C))
+        (my-last '(A B (C D)))
+        (my-last '(A B (C (D E)) F)))
 #+END_SRC
 
 #+RESULTS: problem-01
@@ -52,18 +52,18 @@ Find the last, but one, box of a list.
 *Example:* (fn '(A B C D)) -> (C D)
 #+NAME: problem-02
 #+BEGIN_SRC emacs-lisp :results raw
-  (defun my-last-but-one(LIST)
-    "Returns the last but one box of a list"
-    (if (>= (length (cdr LIST)) 2) (my-last-but-one (cdr LIST)) LIST))
+(defun my-last-but-one(LIST)
+  "Returns the last but one box of a list"
+  (if (>= (length (cdr LIST)) 2) (my-last-but-one (cdr LIST)) LIST))
 
-  ;; Test evaluations
-  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
-          (my-last-but-one '(A B C D))
-          (my-last-but-one '(A))
-          (my-last-but-one '(A B))
-          (my-last-but-one '(A B C))
-          (my-last-but-one '(A B (C D)))
-          (my-last-but-one '(A B (C (D E)) F)))
+;; Test evaluations
+(format "%s\n%s\n%s\n%s\n%s\n%s\n"
+        (my-last-but-one '(A B C D))
+        (my-last-but-one '(A))
+        (my-last-but-one '(A B))
+        (my-last-but-one '(A B C))
+        (my-last-but-one '(A B (C D)))
+        (my-last-but-one '(A B (C (D E)) F)))
 #+END_SRC
 
 #+RESULTS: problem-02
@@ -80,18 +80,18 @@ Find the K'th element of a list (1 based index).
 *Example:* (fn '(A B C D) 3) -> C
 #+NAME: problem-03
 #+BEGIN_SRC emacs-lisp :results raw
-  (defun my-nth-element(LIST N)
-    "Returns the nth element of a list"
-    (if (<= N 1) (car LIST) (my-nth-element (cdr LIST) (- N 1))))
+(defun my-nth-element(LIST N)
+  "Returns the nth element of a list"
+  (if (<= N 1) (car LIST) (my-nth-element (cdr LIST) (- N 1))))
 
-  ;; Test evaluations
-  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
-          (my-nth-element '(A B C D) 3)
-          (my-nth-element '(A) 1)
-          (my-nth-element '(A B) 1)
-          (my-nth-element '(A B C) 2)
-          (my-nth-element '(A B (C D)) 3)
-          (my-nth-element '(A B (C (D E)) F) 3))
+;; Test evaluations
+(format "%s\n%s\n%s\n%s\n%s\n%s\n"
+        (my-nth-element '(A B C D) 3)
+        (my-nth-element '(A) 1)
+        (my-nth-element '(A B) 1)
+        (my-nth-element '(A B C) 2)
+        (my-nth-element '(A B (C D)) 3)
+        (my-nth-element '(A B (C (D E)) F) 3))
 #+END_SRC
 
 #+RESULTS: problem-03
@@ -108,18 +108,18 @@ Find the numbers of elements on a list.
 *Example:* (fn '(A B C D)) -> 4
 #+NAME: problem-04
 #+BEGIN_SRC emacs-lisp :results raw
-  (defun my-num-of-elements(LIST)
-    "Returns the number of elements on a list"
-    (if (cdr LIST) (+ (my-num-of-elements (cdr LIST)) 1) 1))
+(defun my-num-of-elements(LIST)
+  "Returns the number of elements on a list"
+  (if (cdr LIST) (+ (my-num-of-elements (cdr LIST)) 1) 1))
 
-  ;; Test evaluations
-  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
-          (my-num-of-elements '(A B C D))
-          (my-num-of-elements '(A))
-          (my-num-of-elements '(A B))
-          (my-num-of-elements '(A B C))
-          (my-num-of-elements '(A B (C D)))
-          (my-num-of-elements '(A B (C (D E)) F)))
+;; Test evaluations
+(format "%s\n%s\n%s\n%s\n%s\n%s\n"
+        (my-num-of-elements '(A B C D))
+        (my-num-of-elements '(A))
+        (my-num-of-elements '(A B))
+        (my-num-of-elements '(A B C))
+        (my-num-of-elements '(A B (C D)))
+        (my-num-of-elements '(A B (C (D E)) F)))
 #+END_SRC
 
 #+RESULTS: problem-04
@@ -136,18 +136,18 @@ Reverse a list.
 *Example:* (fn '(A B C D)) -> (D C B A)
 #+NAME: problem-05
 #+BEGIN_SRC emacs-lisp :results raw
-  (defun my-reverse-list(LIST)
-    "Reverses a list"
-    (if (cdr LIST) (append (last LIST) (my-reverse-list (butlast LIST))) LIST))
+(defun my-reverse-list(LIST)
+  "Reverses a list"
+  (if (cdr LIST) (append (last LIST) (my-reverse-list (butlast LIST))) LIST))
 
-  ;; Test evaluations
-  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
-          (my-reverse-list '(A B C D))
-          (my-reverse-list '(A))
-          (my-reverse-list '(A B))
-          (my-reverse-list '(A B C))
-          (my-reverse-list '(A B (C D)))
-          (my-reverse-list '(A B (C (D E)) F)))
+;; Test evaluations
+(format "%s\n%s\n%s\n%s\n%s\n%s\n"
+        (my-reverse-list '(A B C D))
+        (my-reverse-list '(A))
+        (my-reverse-list '(A B))
+        (my-reverse-list '(A B C))
+        (my-reverse-list '(A B (C D)))
+        (my-reverse-list '(A B (C (D E)) F)))
 #+END_SRC
 
 #+RESULTS: problem-05
@@ -164,21 +164,21 @@ Find out whether a list is a palindrome.
 *Example:* (fn '(x a n a x)) -> t
 #+NAME: problem-06
 #+BEGIN_SRC emacs-lisp :results raw
-  (defun my-is-palindrome(LIST)
-    "Check if the list is a palindrome"
-    (cond
-     ((find '32 LIST) (my-is-palindrome (remove '32 LIST))) ;; Exclude spacebar chars
-     ((<= (length LIST) 1) t)
-     ((eql (first LIST) (car (last LIST))) (my-is-palindrome (subseq LIST 1 (- (length LIST) 1))))))
+(defun my-is-palindrome(LIST)
+  "Check if the list is a palindrome"
+  (cond
+   ((find '32 LIST) (my-is-palindrome (remove '32 LIST))) ;; Exclude spacebar chars
+   ((<= (length LIST) 1) t)
+   ((eql (first LIST) (car (last LIST))) (my-is-palindrome (subseq LIST 1 (- (length LIST) 1))))))
 
-  ;; Test evaluations
-  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
-          (my-is-palindrome '(x a n a x))
-          (my-is-palindrome '(A))
-          (my-is-palindrome '(a b c))
-          (my-is-palindrome '(o v o))
-          (my-is-palindrome (coerce "racecar" 'list))
-          (my-is-palindrome (coerce "dennis and edna sinned" 'list)))
+;; Test evaluations
+(format "%s\n%s\n%s\n%s\n%s\n%s\n"
+        (my-is-palindrome '(x a n a x))
+        (my-is-palindrome '(A))
+        (my-is-palindrome '(a b c))
+        (my-is-palindrome '(o v o))
+        (my-is-palindrome (coerce "racecar" 'list))
+        (my-is-palindrome (coerce "dennis and edna sinned" 'list)))
 #+END_SRC
 
 #+RESULTS: problem-06
@@ -195,26 +195,26 @@ Flatten a nested list structure.
 *Example:* (fn '(A (B C (D) E))) -> (A B C D E)
 #+NAME: problem-07
 #+BEGIN_SRC emacs-lisp :results raw
-  (defun my-flatten-nest(LIST)
-    "Flatten a nested list structure"
-    (cond
-     ;; () -> ()
-     ((null LIST) nil)
-     ;; a -> 'a
-     ((atom LIST) (list LIST))
-     ;; ((a b) ...) -> fn'(a b) ++ fn(...)
-     ((listp (car LIST)) (append (my-flatten-nest (car LIST)) (my-flatten-nest (cdr LIST))))
-     ;; (a ...) -> 'a ++ fn(...)
-     (t (append (list (car LIST)) (my-flatten-nest (cdr LIST))))))
+(defun my-flatten-nest(LIST)
+  "Flatten a nested list structure"
+  (cond
+   ;; () -> ()
+   ((null LIST) nil)
+   ;; a -> 'a
+   ((atom LIST) (list LIST))
+   ;; ((a b) ...) -> fn'(a b) ++ fn(...)
+   ((listp (car LIST)) (append (my-flatten-nest (car LIST)) (my-flatten-nest (cdr LIST))))
+   ;; (a ...) -> 'a ++ fn(...)
+   (t (append (list (car LIST)) (my-flatten-nest (cdr LIST))))))
 
-  ;; Test evaluations
-  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
-          (my-flatten-nest '(A (B C (D) E)))
-          (my-flatten-nest '(A))
-          (my-flatten-nest '(A B))
-          (my-flatten-nest '(A B C))
-          (my-flatten-nest '(A B (C D)))
-          (my-flatten-nest '(A B (C (D E)) F)))
+;; Test evaluations
+(format "%s\n%s\n%s\n%s\n%s\n%s\n"
+        (my-flatten-nest '(A (B C (D) E)))
+        (my-flatten-nest '(A))
+        (my-flatten-nest '(A B))
+        (my-flatten-nest '(A B C))
+        (my-flatten-nest '(A B (C D)))
+        (my-flatten-nest '(A B (C (D E)) F)))
 #+END_SRC
 
 #+RESULTS: problem-07
@@ -231,26 +231,26 @@ Eliminate consecutive duplicate elements.
 *Example:* (fn '(A A A B B C D D E E E E)) -> (A B C D E)
 #+NAME: problem-08
 #+BEGIN_SRC emacs-lisp :results raw
-  (defun my-compress(LIST)
-    "Eliminate consecutive duplicate elements"
-    (cond
-     ;; fn() = ()
-     ((null LIST) nil)
-     ;; fn'(a) = '(a)
-     ((null (cdr LIST)) LIST)
-     ;; fn'(a a ...) = fn(a ...)
-     ((equal (car LIST) (car (cdr LIST))) (my-compress (cdr LIST)))
-     ;; fn'(a b ...) = '(a) ++ fn(b ...)
-     (t (append (list (car LIST)) (my-compress (cdr LIST))))))
+(defun my-compress(LIST)
+  "Eliminate consecutive duplicate elements"
+  (cond
+   ;; fn() = ()
+   ((null LIST) nil)
+   ;; fn'(a) = '(a)
+   ((null (cdr LIST)) LIST)
+   ;; fn'(a a ...) = fn(a ...)
+   ((equal (car LIST) (car (cdr LIST))) (my-compress (cdr LIST)))
+   ;; fn'(a b ...) = '(a) ++ fn(b ...)
+   (t (append (list (car LIST)) (my-compress (cdr LIST))))))
 
-  ;; Test evaluations
-  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
-          (my-compress '(A A A B B C D D E E E E))
-          (my-compress '(A A))
-          (my-compress '(A B))
-          (my-compress '(A B B C))
-          (my-compress '(A B (C D) E F))
-          (my-compress '(A B (C D) (C D) (E F))))
+;; Test evaluations
+(format "%s\n%s\n%s\n%s\n%s\n%s\n"
+        (my-compress '(A A A B B C D D E E E E))
+        (my-compress '(A A))
+        (my-compress '(A B))
+        (my-compress '(A B B C))
+        (my-compress '(A B (C D) E F))
+        (my-compress '(A B (C D) (C D) (E F))))
 #+END_SRC
 
 #+RESULTS: problem-08
@@ -267,35 +267,35 @@ Pack consecutive duplicates into sublists.
 *Example:* (fn '(A A A B B C D D E E E E)) -> ((A A A) (B B) (C) (D D) (E E E E))
 #+NAME: problem-09
 #+BEGIN_SRC emacs-lisp :results raw
-  ;; helper function
-  ;; fn'()      = 0
-  ;; fn'(a b c) = 1
-  ;; fn'(a a c) = 2
-  ;; fn'(a a a) = 3
-  (defun my-helper-count-consecutives(LIST)
-    "Counts the amount of consecutive copies of the first element"
-    (cond
-     ((null LIST) 0)
-     ((equal (nth 0 LIST) (nth 1 LIST)) (+ (my-helper-count-consecutives (cdr LIST)) 1))
-     (t 1)))
+;; helper function
+;; fn'()      = 0
+;; fn'(a b c) = 1
+;; fn'(a a c) = 2
+;; fn'(a a a) = 3
+(defun my-helper-count-consecutives(LIST)
+  "Counts the amount of consecutive copies of the first element"
+  (cond
+   ((null LIST) 0)
+   ((equal (nth 0 LIST) (nth 1 LIST)) (+ (my-helper-count-consecutives (cdr LIST)) 1))
+   (t 1)))
 
-  (defun my-packed(LIST)
-    "Packs consecutive duplicates into sublists"
-    (cond
-     ;; fn'() = ()
-     ((null LIST) nil)
-     ;; fn'(a a a b ...) = '((a a a)) ++ fn'(b ...)
-     (t (append (list (subseq LIST 0 (my-helper-count-consecutives LIST)))
-                (my-packed (subseq LIST (my-helper-count-consecutives LIST)))))))
+(defun my-packed(LIST)
+  "Packs consecutive duplicates into sublists"
+  (cond
+   ;; fn'() = ()
+   ((null LIST) nil)
+   ;; fn'(a a a b ...) = '((a a a)) ++ fn'(b ...)
+   (t (append (list (subseq LIST 0 (my-helper-count-consecutives LIST)))
+              (my-packed (subseq LIST (my-helper-count-consecutives LIST)))))))
 
-  ;; Test evaluations
-  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
-          (my-packed '(A A A B B C D D E E E E))
-          (my-packed '(A))
-          (my-packed '(A B))
-          (my-packed '(A B B C))
-          (my-packed '(A B (C D) E F))
-          (my-packed '(A B (C D) (C D) (E F))))
+;; Test evaluations
+(format "%s\n%s\n%s\n%s\n%s\n%s\n"
+        (my-packed '(A A A B B C D D E E E E))
+        (my-packed '(A))
+        (my-packed '(A B))
+        (my-packed '(A B B C))
+        (my-packed '(A B (C D) E F))
+        (my-packed '(A B (C D) (C D) (E F))))
 #+END_SRC
 
 #+RESULTS: problem-09
@@ -312,41 +312,41 @@ Use the result of problem P09 to implement the so-called run-length encoding dat
 *Example:* (fn '((A A A) (B B) (C) (D D) (E E E E))) -> ((3 A) (2 B) (1 C) (2 D) (4 E))
 #+NAME: problem-10
 #+BEGIN_SRC emacs-lisp :results raw
-  ;; helper function
-  ;; fn'()      = 0
-  ;; fn'(a b c) = 1
-  ;; fn'(a a c) = 2
-  ;; fn'(a a a) = 3
-  (defun my-helper-count-consecutives(LIST)
-    "Counts the amount of consecutive copies of the first element"
-    (cond
-     ((null LIST) 0)
-     ((equal (nth 0 LIST) (nth 1 LIST)) (+ (my-helper-count-consecutives (cdr LIST)) 1))
-     (t 1)))
+;; helper function
+;; fn'()      = 0
+;; fn'(a b c) = 1
+;; fn'(a a c) = 2
+;; fn'(a a a) = 3
+(defun my-helper-count-consecutives(LIST)
+  "Counts the amount of consecutive copies of the first element"
+  (cond
+   ((null LIST) 0)
+   ((equal (nth 0 LIST) (nth 1 LIST)) (+ (my-helper-count-consecutives (cdr LIST)) 1))
+   (t 1)))
 
-  (defun my-packed(LIST)
-    "Packs consecutive duplicates into sublists"
-    (cond
-     ;; fn'() = ()
-     ((null LIST) nil)
-     ;; fn'(a a a b ...) = '((a a a)) ++ fn'(b ...)
-     (t (append (list (subseq LIST 0 (my-helper-count-consecutives LIST)))
-                (my-packed (subseq LIST (my-helper-count-consecutives LIST)))))))
+(defun my-packed(LIST)
+  "Packs consecutive duplicates into sublists"
+  (cond
+   ;; fn'() = ()
+   ((null LIST) nil)
+   ;; fn'(a a a b ...) = '((a a a)) ++ fn'(b ...)
+   (t (append (list (subseq LIST 0 (my-helper-count-consecutives LIST)))
+              (my-packed (subseq LIST (my-helper-count-consecutives LIST)))))))
 
-  (defun my-length-encode(PACKED)
-    "Performs run-length encoding of a list"
-    (if PACKED (append (list (append (list (length (car PACKED)))
-                                     (list (car (car PACKED)))))
-                       (my-length-encode (cdr PACKED)))))
+(defun my-length-encode(PACKED)
+  "Performs run-length encoding of a list"
+  (if PACKED (append (list (append (list (length (car PACKED)))
+                                   (list (car (car PACKED)))))
+                     (my-length-encode (cdr PACKED)))))
 
-  ;; Test evaluations
-  (format "%s\n%s\n%s\n%s\n%s\n%s\n"
-          (my-length-encode (my-packed '(A A A B B C D D E E E E)))
-          (my-length-encode (my-packed '(A)))
-          (my-length-encode (my-packed '(A B)))
-          (my-length-encode (my-packed '(A B B C)))
-          (my-length-encode (my-packed '(A B (C D) E F)))
-          (my-length-encode (my-packed '(A B (C D) (C D) (E F)))))
+;; Test evaluations
+(format "%s\n%s\n%s\n%s\n%s\n%s\n"
+        (my-length-encode (my-packed '(A A A B B C D D E E E E)))
+        (my-length-encode (my-packed '(A)))
+        (my-length-encode (my-packed '(A B)))
+        (my-length-encode (my-packed '(A B B C)))
+        (my-length-encode (my-packed '(A B (C D) E F)))
+        (my-length-encode (my-packed '(A B (C D) (C D) (E F)))))
 #+END_SRC
 
 #+RESULTS: problem-10
