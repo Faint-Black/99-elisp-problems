@@ -20,6 +20,11 @@
   - [[#problem-18][18 - Extract a slice from a list]]
   - [[#problem-19][19 - Rotate a list N places to the left]]
   - [[#problem-20][20 - Remove the Kth element from a list]]
+  - [[#problem-21][21 - Insert element at position]]
+  - [[#problem-22][22 - Create an integer range list]]
+  - [[#problem-23][23 - Extract randomly selected elements from a list]]
+  - [[#problem-24][24 - Create a lottery numbers generator]]
+  - [[#problem-25][25 - Generate a random permutation of a list]]
 
 -----
 
@@ -679,4 +684,177 @@ Remove the kth element of a list (1 based index).
 #+RESULTS: problem-20
 (A B D E F G H I J K)
 (B C D E F G H I J K)
+
+** problem-21
+Insert an element at a given position on a list.
+
+*Example:* (fn 3 'FOO '(A B C D E)) -> (A B FOO C D E)
+#+NAME: problem-21
+#+BEGIN_SRC emacs-lisp :results raw
+(defun my-insert-at (N ELEM LIST)
+  "Inserts element at position N on a list"
+  (append (subseq LIST 0 (- N 1)) (list ELEM) (nthcdr (- N 1) LIST)))
+
+;; Test evaluations
+(format "%s\n%s\n"
+        (my-insert-at 3 'FOO '(A B C D E))
+        (my-insert-at 1 'BAR '(A B C D E)))
+#+END_SRC
+
+#+RESULTS: problem-21
+(A B FOO C D E)
+(BAR A B C D E)
+
+** problem-22
+Create a list containing all integers within a given range (inclusive on both sides).
+
+*Example:* (fn 3 7) -> (3 4 5 6 7)
+
+*Example:* (fn -2 2) -> (-2 -1 0 1 2)
+
+*Example:* (fn 7 3) -> (7 6 5 4 3)
+#+NAME: problem-22
+#+BEGIN_SRC emacs-lisp :results raw
+(defun my-range (START END)
+  "Returns a list representing the inclusive range between two numbers"
+  (cond
+   ((= START END) (list START))
+   ((< START END) (append (list START) (my-range (+ START 1) END)))
+   ((> START END) (append (list START) (my-range (- START 1) END)))))
+
+;; Test evaluations
+(format "%s\n%s\n%s\n"
+        (my-range 3 7)
+        (my-range -2 2)
+        (my-range 7 3))
+#+END_SRC
+
+#+RESULTS: problem-22
+(3 4 5 6 7)
+(-2 -1 0 1 2)
+(7 6 5 4 3)
+
+** problem-23
+Extract a given number of randomly selected elements from a list. Bonus points if they are all from different selections.
+
+*Example:* (fn 3 '(A B C D E F G H I J)) -> possibly '(F C J)
+#+NAME: problem-23
+#+BEGIN_SRC emacs-lisp :results raw
+(defun my-helper-remove-at (N LIST)
+  "Removes the nth element of a list"
+  (append (subseq LIST 0 (- N 1)) (nthcdr N LIST)))
+
+(defun my-rand-select (N LIST)
+  "Pick N different random elements from a list and return them"
+  (setf *random-state* (make-random-state t))
+  (setq *random-index* (random (length LIST)))
+  (cond
+   ((null LIST) nil)
+   ((= N 0) nil)
+   ((>= N (length LIST)) LIST)
+   (t (append (list (nth *random-index* LIST))
+              (my-rand-select (- N 1) (my-helper-remove-at *random-index* LIST))))))
+
+;; Test evaluations
+(format "%s\n%s\n%s\n"
+        (my-rand-select 3 '(A B C D E F G H I J))
+        (my-rand-select 3 '(A B C D E F G H I J))
+        (my-rand-select 3 '(A B C D E F G H I J)))
+#+END_SRC
+
+#+RESULTS: problem-23
+(F A G)
+(H J A)
+(E A A)
+
+** problem-24
+Draw N different random numbers from the set 1..M.
+
+*Example:* (fn 6 100) -> possibly '(32 10 54 2 95 11)
+#+NAME: problem-24
+#+BEGIN_SRC emacs-lisp :results raw
+(defun my-helper-remove-at (N LIST)
+  "Removes the nth element of a list"
+  (append (subseq LIST 0 (- N 1)) (nthcdr N LIST)))
+
+(defun my-helper-range (START END)
+  "Returns a list representing the inclusive range between two numbers"
+  (cond
+   ((= START END) (list START))
+   ((< START END) (append (list START) (my-helper-range (+ START 1) END)))
+   ((> START END) (append (list START) (my-helper-range (- START 1) END)))))
+
+(defun my-helper-rand-select (N LIST)
+  "Pick N different random elements from a list and return them"
+  (setf *random-state* (make-random-state t))
+  (setq *random-index* (random (length LIST)))
+  (cond
+   ((null LIST) nil)
+   ((= N 0) nil)
+   ((>= N (length LIST)) LIST)
+   (t (append (list (nth *random-index* LIST))
+              (my-helper-rand-select (- N 1) (my-helper-remove-at *random-index* LIST))))))
+
+(defun my-lottery-generator (N RANGE)
+  "Draw N different numbers from the range list"
+  (my-helper-rand-select N (my-helper-range 0 RANGE)))
+
+;; Test evaluations
+(format "%s\n%s\n%s\n"
+        (my-lottery-generator 6 100)
+        (my-lottery-generator 6 100)
+        (my-lottery-generator 6 100))
+#+END_SRC
+
+#+RESULTS: problem-24
+(58 76 93 13 91 80)
+(30 55 35 11 47 95)
+(86 93 61 33 25 84)
+
+** problem-25
+Generate a random permutation of the elements of a list.
+
+*Example:* (fn '(A B C D E F)) -> possibly '(B A D C E F)
+#+NAME: problem-25
+#+BEGIN_SRC emacs-lisp :results raw
+(defun my-helper-remove-nth (N LIST)
+  "Removes the nth element of a list"
+  (append (subseq LIST 0 N) (nthcdr (+ N 1) LIST)))
+
+(defun my-helper-range (START END)
+  "Returns a list representing the inclusive range between two numbers"
+  (cond
+   ((= START END) (list START))
+   ((< START END) (append (list START) (my-helper-range (+ START 1) END)))
+   ((> START END) (append (list START) (my-helper-range (- START 1) END)))))
+
+(defun my-helper-rand-select (N LIST)
+  "Pick N different random elements from a list and return them"
+  (setf *random-state* (make-random-state t))
+  ;; (random 0) throws an exception
+  (cond
+   ((<= (length LIST) 0) (setq *random-index* 0))
+   (t (setq *random-index* (random (length LIST)))))
+  (cond
+   ((null LIST) nil)
+   ((<= N 0) nil)
+   (t (append (list (nth *random-index* LIST))
+              (my-helper-rand-select (- N 1) (my-helper-remove-nth *random-index* LIST))))))
+
+(defun my-random-permutation (LIST)
+  "Generate a random permutation of the input list"
+  (my-helper-rand-select (length LIST) LIST))
+
+;; Test evaluations
+(format "%s\n%s\n%s\n"
+        (my-random-permutation '(A B C D E F))
+        (my-random-permutation '(A B C D E F))
+        (my-random-permutation '(A B C D E F)))
+#+END_SRC
+
+#+RESULTS: problem-25
+(E B F C D A)
+(C F E D A B)
+(F E D B C A)
+
 
